@@ -9,11 +9,17 @@
 /* Begin PBXBuildFile section */
 		C9D83588229991AE9ECC58D5 /* Pods_SuperCoordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2A70389F16A893E9128331 /* Pods_SuperCoordinator.framework */; };
 		F8FA1027286AACBD004E6DFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FA1026286AACBD004E6DFA /* AppDelegate.swift */; };
-		F8FA1029286AACBD004E6DFA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FA1028286AACBD004E6DFA /* SceneDelegate.swift */; };
-		F8FA102B286AACBD004E6DFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FA102A286AACBD004E6DFA /* ViewController.swift */; };
-		F8FA102E286AACBD004E6DFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8FA102C286AACBD004E6DFA /* Main.storyboard */; };
 		F8FA1030286AACBF004E6DFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FA102F286AACBF004E6DFA /* Assets.xcassets */; };
 		F8FA1033286AACBF004E6DFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8FA1031286AACBF004E6DFA /* LaunchScreen.storyboard */; };
+		F8FA104A286AB09C004E6DFA /* SCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FA1049286AB09C004E6DFA /* SCViewController.swift */; };
+		F8FA104C286AB0BD004E6DFA /* SCViewControllerA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FA104B286AB0BD004E6DFA /* SCViewControllerA.swift */; };
+		F8FA104E286AB101004E6DFA /* SCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FA104D286AB101004E6DFA /* SCNavigationController.swift */; };
+		F8FA1050286AB4FE004E6DFA /* SCViewControllerB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FA104F286AB4FE004E6DFA /* SCViewControllerB.swift */; };
+		F8FA1052286AB666004E6DFA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FA1051286AB666004E6DFA /* Coordinator.swift */; };
+		F8FA1055286AE421004E6DFA /* SCViewControllerC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FA1054286AE421004E6DFA /* SCViewControllerC.swift */; };
+		F8FA1057286AE431004E6DFA /* SCViewControllerD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FA1056286AE431004E6DFA /* SCViewControllerD.swift */; };
+		F8FA1059286AE43A004E6DFA /* SCViewControllerE.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FA1058286AE43A004E6DFA /* SCViewControllerE.swift */; };
+		F8FA105C286AF37C004E6DFA /* SCViewControllerF.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FA105B286AF37C004E6DFA /* SCViewControllerF.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,12 +28,18 @@
 		C57A3E50817E16953B4BAD5F /* Pods-SuperCoordinator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCoordinator.release.xcconfig"; path = "Target Support Files/Pods-SuperCoordinator/Pods-SuperCoordinator.release.xcconfig"; sourceTree = "<group>"; };
 		F8FA1023286AACBD004E6DFA /* SuperCoordinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperCoordinator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8FA1026286AACBD004E6DFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F8FA1028286AACBD004E6DFA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F8FA102A286AACBD004E6DFA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F8FA102D286AACBD004E6DFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F8FA102F286AACBF004E6DFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8FA1032286AACBF004E6DFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8FA1034286AACBF004E6DFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8FA1049286AB09C004E6DFA /* SCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCViewController.swift; sourceTree = "<group>"; };
+		F8FA104B286AB0BD004E6DFA /* SCViewControllerA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCViewControllerA.swift; sourceTree = "<group>"; };
+		F8FA104D286AB101004E6DFA /* SCNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNavigationController.swift; sourceTree = "<group>"; };
+		F8FA104F286AB4FE004E6DFA /* SCViewControllerB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCViewControllerB.swift; sourceTree = "<group>"; };
+		F8FA1051286AB666004E6DFA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F8FA1054286AE421004E6DFA /* SCViewControllerC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCViewControllerC.swift; sourceTree = "<group>"; };
+		F8FA1056286AE431004E6DFA /* SCViewControllerD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCViewControllerD.swift; sourceTree = "<group>"; };
+		F8FA1058286AE43A004E6DFA /* SCViewControllerE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCViewControllerE.swift; sourceTree = "<group>"; };
+		F8FA105B286AF37C004E6DFA /* SCViewControllerF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCViewControllerF.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +60,6 @@
 				5EBDC78BDD0EAF7FA0DCAEA6 /* Pods-SuperCoordinator.debug.xcconfig */,
 				C57A3E50817E16953B4BAD5F /* Pods-SuperCoordinator.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,15 +92,45 @@
 		F8FA1025286AACBD004E6DFA /* SuperCoordinator */ = {
 			isa = PBXGroup;
 			children = (
+				F8FA1046286AB073004E6DFA /* SuperCoordinator */,
 				F8FA1026286AACBD004E6DFA /* AppDelegate.swift */,
-				F8FA1028286AACBD004E6DFA /* SceneDelegate.swift */,
-				F8FA102A286AACBD004E6DFA /* ViewController.swift */,
-				F8FA102C286AACBD004E6DFA /* Main.storyboard */,
+				F8FA104B286AB0BD004E6DFA /* SCViewControllerA.swift */,
+				F8FA104F286AB4FE004E6DFA /* SCViewControllerB.swift */,
+				F8FA1054286AE421004E6DFA /* SCViewControllerC.swift */,
+				F8FA1056286AE431004E6DFA /* SCViewControllerD.swift */,
+				F8FA1058286AE43A004E6DFA /* SCViewControllerE.swift */,
+				F8FA105B286AF37C004E6DFA /* SCViewControllerF.swift */,
 				F8FA102F286AACBF004E6DFA /* Assets.xcassets */,
 				F8FA1031286AACBF004E6DFA /* LaunchScreen.storyboard */,
 				F8FA1034286AACBF004E6DFA /* Info.plist */,
 			);
 			path = SuperCoordinator;
+			sourceTree = "<group>";
+		};
+		F8FA1046286AB073004E6DFA /* SuperCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F8FA1048286AB091004E6DFA /* Coordinator */,
+				F8FA1047286AB080004E6DFA /* ViewControllers */,
+			);
+			path = SuperCoordinator;
+			sourceTree = "<group>";
+		};
+		F8FA1047286AB080004E6DFA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F8FA1049286AB09C004E6DFA /* SCViewController.swift */,
+				F8FA104D286AB101004E6DFA /* SCNavigationController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F8FA1048286AB091004E6DFA /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F8FA1051286AB666004E6DFA /* Coordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +195,6 @@
 			files = (
 				F8FA1033286AACBF004E6DFA /* LaunchScreen.storyboard in Resources */,
 				F8FA1030286AACBF004E6DFA /* Assets.xcassets in Resources */,
-				F8FA102E286AACBD004E6DFA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,23 +247,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8FA102B286AACBD004E6DFA /* ViewController.swift in Sources */,
+				F8FA1059286AE43A004E6DFA /* SCViewControllerE.swift in Sources */,
+				F8FA105C286AF37C004E6DFA /* SCViewControllerF.swift in Sources */,
+				F8FA104C286AB0BD004E6DFA /* SCViewControllerA.swift in Sources */,
+				F8FA1050286AB4FE004E6DFA /* SCViewControllerB.swift in Sources */,
+				F8FA1052286AB666004E6DFA /* Coordinator.swift in Sources */,
+				F8FA1057286AE431004E6DFA /* SCViewControllerD.swift in Sources */,
 				F8FA1027286AACBD004E6DFA /* AppDelegate.swift in Sources */,
-				F8FA1029286AACBD004E6DFA /* SceneDelegate.swift in Sources */,
+				F8FA104E286AB101004E6DFA /* SCNavigationController.swift in Sources */,
+				F8FA1055286AE421004E6DFA /* SCViewControllerC.swift in Sources */,
+				F8FA104A286AB09C004E6DFA /* SCViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F8FA102C286AACBD004E6DFA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F8FA102D286AACBD004E6DFA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F8FA1031286AACBF004E6DFA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -361,7 +400,6 @@
 				INFOPLIST_FILE = SuperCoordinator/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -389,7 +427,6 @@
 				INFOPLIST_FILE = SuperCoordinator/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
