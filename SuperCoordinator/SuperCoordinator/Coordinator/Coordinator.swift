@@ -6,84 +6,73 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class Coordinator {
+open class Coordinator: NSObject {
+    private let disposeBag = DisposeBag()
+    public let navigationController: SCNavigationController
+    public var startedViewController: UIViewController?
+    public var childCoordinators: [Coordinator] = []
+    public weak var superCoordinator: Coordinator?
+    public private(set) var useSuperCoordinatorFinish: Bool = false
 
+
+    public init(navigationController: SCNavigationController) {
+        self.navigationController = navigationController
+        super.init()
+        handleRxBindings()
+    }
+
+    private func handleRxBindings() {
+        navigationController.actionSubject
+            .bind { [weak self] action in
+                switch action {
+                case .willPush, .didPush, .willPop, .error:
+                    break
+                case .didPop:
+                    self?.checkIfAutoFinish()
+                }
+            }.disposed(by: disposeBag)
+    }
+
+    private func checkIfAutoFinish() {
+        if let startedViewController = startedViewController, !navigationController.viewControllers.contains(startedViewController) {
+            removeFromSuperCoordinator()
+        }
+    }
+
+    private func removeFromSuperCoordinator() {
+        superCoordinator?.childCoordinators.removeAll(where: { $0 == self })
+    }
+
+    public func startChildCoordinator(_ coordinator: Coordinator, useSuperCoordinatorFinish: Bool = false) {
+        childCoordinators.append(coordinator)
+        coordinator.superCoordinator = self
+        coordinator.useSuperCoordinatorFinish = useSuperCoordinatorFinish
+        coordinator.start()
+    }
+
+    /// page transition animations and navigations goes here
+    open func start() {
+        fatalError("Override this function to present/push your viewcontrollers")
+    }
+
+    open func back(animated: Bool = true) {
+        navigationController.popViewController(animated: animated)
+    }
+
+    open func finish(animated: Bool = true) {
+        if let superCoordinator = superCoordinator, useSuperCoordinatorFinish {
+            superCoordinator.finish(animated: animated)
+        } else {
+            guard
+                let startedViewController = self.startedViewController,
+                let index = navigationController.viewControllers.firstIndex(of: startedViewController),
+                index >= 1
+            else { return }
+            let toViewController = navigationController.viewControllers[index - 1]
+            navigationController.popToViewController(toViewController, animated: animated)
+        }
+    }
 }
-
-//
-////
-////  Coordinator.swift
-////  Core
-////
-////  Created by Ville Välimaa on 2020/6/15.
-////  Copyright © 2020 Wiredcraft. All rights reserved.
-////
-//
-//import UIKit
-//
-///// The base class for Coordinator pattern, it holds manage convience properties
-/////
-///// childCoordinators: manages the child coordinators
-///// superCoordinator: refrence to the coordinator that holds current coordinator
-///// context: AppContext
-///// useSuperCoordinatorFinish: if set true, will call superCoordinator to handle the finish action
-///// afterFinishExtraHandler: some extra handler after coordinator finish
-//
-//open class Coordinator: NSObject {
-//    public var childCoordinators: [Coordinator] = []
-//    public weak var superCoordinator: Coordinator?
-//    public var context: Context
-//    public private(set) var useSuperCoordinatorFinish: Bool = false
-//    public var afterFinishExtraHandler: EmptyBlock?
-//    public var navigationController: NavigationController?
-//    public weak var presentingViewController: UIViewController?
-//
-//    public init(context: Context) {
-//        self.context = context
-//        super.init()
-//    }
-//    /// always call this to start a child coordinator
-//    public func startChildCoordinator(_ coordinator: Coordinator,
-//                                      useSuperCoordinatorFinish: Bool = false,
-//                                      afterFinishExtraHandler: EmptyBlock? = nil) {
-//        childCoordinators.append(coordinator)
-//        coordinator.superCoordinator = self
-//        coordinator.useSuperCoordinatorFinish = useSuperCoordinatorFinish
-//        coordinator.afterFinishExtraHandler = afterFinishExtraHandler
-//        coordinator.start()
-//    }
-//    /// always call this to finish the current coordinator
-//    public func removeFromSuperCoordinator(animated: Bool = true, completion: EmptyBlock? = nil) {
-//        let newCompletion: EmptyBlock = { [weak self] in
-//            completion?()
-//            self?.afterFinishExtraHandler?()
-//            self?.superCoordinator?.childCoordinators.removeAll(where: { $0 == self })
-//        }
-//
-//        guard animated else {
-//            newCompletion()
-//            return
-//        }
-//        if useSuperCoordinatorFinish {
-//            superCoordinator?.removeFromSuperCoordinator(animated: animated, completion: newCompletion)
-//        } else {
-//            self.finish(newCompletion)
-//        }
-//    }
-//    public func findCoordinator(where filter: (Coordinator) -> Bool) -> Coordinator? {
-//        if filter(self) {
-//            return self
-//        } else {
-//            return superCoordinator?.findCoordinator(where: filter)
-//        }
-//    }
-//    /// page transition animations and navigations goes here
-//    open func start() {
-//        fatalError("Override this function to present/push your viewcontrollers")
-//    }
-//    /// viewcontrollers dismiss/pop actions goes here, always remember to call completion
-//    open func finish(_ completion: EmptyBlock?) {
-//        fatalError("Override this function to dismiss/pop your viewcontrollers")
-//    }
-//}

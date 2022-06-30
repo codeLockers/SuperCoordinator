@@ -9,9 +9,11 @@ import UIKit
 import SnapKit
 
 class SCViewControllerA: SCViewController {
+    var goToPageB: (() -> Void)?
+
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "PAGE A"
+        label.text = "Coordinator A - Page A"
         return label
     }()
 
@@ -23,39 +25,25 @@ class SCViewControllerA: SCViewController {
         return button
     }()
 
+    deinit {
+        print("🐟🐟 deinit SCViewControllerA")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
-        view.addSubview(nameLabel)
-        nameLabel.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-        }
         view.addSubview(nextButton)
         nextButton.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(nameLabel.snp.bottom).offset(50)
+            make.center.equalToSuperview()
         }
-//        scNavigationController?.willPush = { [weak self] route in
-//            print("🐟🐟 A willPush from = \(type(of: route.from)) to = \(type(of: route.to))")
-//        }
-//        scNavigationController?.didPush = { [weak self] route in
-//            print("🐟🐟 A didPush from = \(type(of: route.from)) to = \(type(of: route.to))")
-//        }
-//        scNavigationController?.willPop = { [weak self] route in
-//            print("🐟🐟 A willPop = from = \(type(of: route.from)) to = \(type(of: route.to))")
-//        }
-//        scNavigationController?.didPop = { [weak self] route in
-//            print("🐟🐟 A didPop = from = \(type(of: route.from)) to = \(type(of: route.to))")
-//        }
+        view.addSubview(nameLabel)
+        nameLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(nextButton.snp.top).offset(-50)
+        }
     }
 
     @objc func nextPage() {
-//        navigationController?.pushViewController(SCViewControllerB(), animated: true)
-        (navigationController as? SCNavigationController)?.pushViewController(SCViewControllerB(), animated: true, willPushHandler: { route in
-            print("🐟🐟 A willPush from = \(type(of: route.from)) to = \(type(of: route.to))")
-        }, didPushHandler: { route in
-            print("🐟🐟 A didPush from = \(type(of: route.from)) to = \(type(of: route.to))")
-        })
+        goToPageB?()
     }
 }

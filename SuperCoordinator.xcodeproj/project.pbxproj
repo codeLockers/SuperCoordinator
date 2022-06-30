@@ -20,6 +20,9 @@
 		F8FA1057286AE431004E6DFA /* SCViewControllerD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FA1056286AE431004E6DFA /* SCViewControllerD.swift */; };
 		F8FA1059286AE43A004E6DFA /* SCViewControllerE.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FA1058286AE43A004E6DFA /* SCViewControllerE.swift */; };
 		F8FA105C286AF37C004E6DFA /* SCViewControllerF.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FA105B286AF37C004E6DFA /* SCViewControllerF.swift */; };
+		F8FA1060286C0320004E6DFA /* CoordinatorA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FA105F286C0320004E6DFA /* CoordinatorA.swift */; };
+		F8FA1062286C0337004E6DFA /* CoordinatorB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FA1061286C0337004E6DFA /* CoordinatorB.swift */; };
+		F8FA1064286C0347004E6DFA /* CoordinatorC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FA1063286C0347004E6DFA /* CoordinatorC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		F8FA1056286AE431004E6DFA /* SCViewControllerD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCViewControllerD.swift; sourceTree = "<group>"; };
 		F8FA1058286AE43A004E6DFA /* SCViewControllerE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCViewControllerE.swift; sourceTree = "<group>"; };
 		F8FA105B286AF37C004E6DFA /* SCViewControllerF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCViewControllerF.swift; sourceTree = "<group>"; };
+		F8FA105F286C0320004E6DFA /* CoordinatorA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorA.swift; sourceTree = "<group>"; };
+		F8FA1061286C0337004E6DFA /* CoordinatorB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorB.swift; sourceTree = "<group>"; };
+		F8FA1063286C0347004E6DFA /* CoordinatorC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +101,11 @@
 				F8FA1046286AB073004E6DFA /* SuperCoordinator */,
 				F8FA1026286AACBD004E6DFA /* AppDelegate.swift */,
 				F8FA104B286AB0BD004E6DFA /* SCViewControllerA.swift */,
+				F8FA105F286C0320004E6DFA /* CoordinatorA.swift */,
 				F8FA104F286AB4FE004E6DFA /* SCViewControllerB.swift */,
+				F8FA1061286C0337004E6DFA /* CoordinatorB.swift */,
 				F8FA1054286AE421004E6DFA /* SCViewControllerC.swift */,
+				F8FA1063286C0347004E6DFA /* CoordinatorC.swift */,
 				F8FA1056286AE431004E6DFA /* SCViewControllerD.swift */,
 				F8FA1058286AE43A004E6DFA /* SCViewControllerE.swift */,
 				F8FA105B286AF37C004E6DFA /* SCViewControllerF.swift */,
@@ -252,11 +261,14 @@
 				F8FA104C286AB0BD004E6DFA /* SCViewControllerA.swift in Sources */,
 				F8FA1050286AB4FE004E6DFA /* SCViewControllerB.swift in Sources */,
 				F8FA1052286AB666004E6DFA /* Coordinator.swift in Sources */,
+				F8FA1060286C0320004E6DFA /* CoordinatorA.swift in Sources */,
 				F8FA1057286AE431004E6DFA /* SCViewControllerD.swift in Sources */,
 				F8FA1027286AACBD004E6DFA /* AppDelegate.swift in Sources */,
 				F8FA104E286AB101004E6DFA /* SCNavigationController.swift in Sources */,
 				F8FA1055286AE421004E6DFA /* SCViewControllerC.swift in Sources */,
 				F8FA104A286AB09C004E6DFA /* SCViewController.swift in Sources */,
+				F8FA1062286C0337004E6DFA /* CoordinatorB.swift in Sources */,
+				F8FA1064286C0347004E6DFA /* CoordinatorC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

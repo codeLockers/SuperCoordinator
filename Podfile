@@ -7,4 +7,6 @@ target 'SuperCoordinator' do
 
   # Pods for SuperCoordinator
   pod 'SnapKit'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 end

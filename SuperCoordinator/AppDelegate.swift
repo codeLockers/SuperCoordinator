@@ -9,13 +9,11 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
+    var coordinatorA: CoordinatorA?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        let rootVc = SCNavigationController(rootViewController: SCViewControllerA())
-        window?.rootViewController = rootVc
-        window?.makeKeyAndVisible()
+        coordinatorA = CoordinatorA(navigationController: SCNavigationController())
+        coordinatorA?.start()
         return true
     }
 }

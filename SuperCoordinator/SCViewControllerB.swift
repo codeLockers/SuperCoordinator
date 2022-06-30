@@ -8,9 +8,11 @@
 import UIKit
 
 class SCViewControllerB: SCViewController {
+    var goToPageC: (() -> Void)?
+
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "PAGE B"
+        label.text = "Coordinator B - Page B"
         return label
     }()
 
@@ -22,61 +24,67 @@ class SCViewControllerB: SCViewController {
         return button
     }()
 
-    private lazy var previousButton: UIButton = {
+    private lazy var backButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Previous", for: .normal)
+        button.setTitle("Back", for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.addTarget(self, action: #selector(previousPage), for: .touchUpInside)
+        button.addTarget(self, action: #selector(back), for: .touchUpInside)
         return button
     }()
+
+    private lazy var finishButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Finish", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.addTarget(self, action: #selector(finsh), for: .touchUpInside)
+        return button
+    }()
+
+    deinit {
+        print("🐟🐟 deinit SCViewControllerB")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
-        view.addSubview(nameLabel)
-        nameLabel.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-        }
         view.addSubview(nextButton)
         nextButton.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(nameLabel.snp.bottom).offset(50)
+            make.center.equalToSuperview()
         }
 
-        view.addSubview(previousButton)
-        previousButton.snp.makeConstraints { make in
+        view.addSubview(backButton)
+        backButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(nextButton.snp.bottom).offset(50)
         }
-//        scNavigationController?.willPushHandler = { [weak self] route in
-//            print("🐟🐟 B willPush from = \(type(of: route.from)) to = \(type(of: route.to))")
-//        }
-//        scNavigationController?.didPushHandler = { [weak self] route in
-//            print("🐟🐟 B didPush from = \(type(of: route.from)) to = \(type(of: route.to))")
-//        }
-//        scNavigationController?.willPopHandler = { [weak self] route in
-//            print("🐟🐟 B willPop = from = \(type(of: route.from)) to = \(type(of: route.to))")
-//        }
-//        scNavigationController?.didPopHandler = { [weak self] route in
-//            print("🐟🐟 B didPop = from = \(type(of: route.from)) to = \(type(of: route.to))")
-//        }
+
+        view.addSubview(finishButton)
+        finishButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(backButton.snp.bottom).offset(50)
+        }
+
+        view.addSubview(nameLabel)
+        nameLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(nextButton.snp.top).offset(-50)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     @objc func nextPage() {
-        navigationController?.pushViewController(SCViewControllerC(), animated: true)
+        goToPageC?()
     }
 
-    @objc func previousPage() {
-//        navigationController?.popViewController(animated: true)
-        (navigationController as? SCNavigationController)?.popViewController(animated: true, willPopHandler: { route in
-            print("🐟🐟 B willPop = from = \(type(of: route.from)) to = \(type(of: route.to))")
-        }, didPopHandler: { route in
-            print("🐟🐟 B didPop = from = \(type(of: route.from)) to = \(type(of: route.to))")
-        })
+    @objc func back() {
+        coordinator?.back()
+    }
+
+    @objc func finsh() {
+        coordinator?.finish()
     }
 }
